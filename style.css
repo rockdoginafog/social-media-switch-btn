@@ -234,7 +234,7 @@ body{
   }
 
   a{
-    color: var(white);
+    color: white;
   }
 
   @media(max-width: 900px){
