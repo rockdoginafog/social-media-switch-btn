@@ -233,10 +233,6 @@ body{
     text-align: center;
   }
 
-  a{
-    color: white;
-  }
-
   @media(max-width: 900px){
     .user-containers{
         grid-template-columns: 1fr;
