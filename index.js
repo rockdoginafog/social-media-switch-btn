@@ -4,8 +4,10 @@ const userContainer = document.querySelectorAll(".user-container")
 const overwiewContainer = document.querySelectorAll(".overwiew-container")
 const body = document.querySelector(".body")
 
+function darkThemeSwitch(){
 
-function darkThemeSwtich(){
+    localStorage.setItem("colorDark", "dark")
+
     lightTheme.forEach(thing =>{
         thing.classList.add("color-dark")
     })
@@ -19,10 +21,13 @@ function darkThemeSwtich(){
     })
 
     body.classList.add("body-dark")
+
 }
 
-
 function lightThemeSwitch(){
+
+    localStorage.clear("colorDark", "dark")
+
     lightTheme.forEach(thing =>{
         thing.classList.remove("color-dark")
     })
@@ -38,11 +43,17 @@ function lightThemeSwitch(){
     body.classList.remove("body-dark")
 }
 
-
 switchBtn.addEventListener("click", () =>{
     if(switchBtn.checked){
-        darkThemeSwtich()
+        darkThemeSwitch()
     }else{
         lightThemeSwitch()
     }
 })
+
+let colorDark = localStorage.getItem('colorDark')
+
+if(colorDark === 'dark'){
+    darkThemeSwitch()
+    switchBtn.checked = true
+}
